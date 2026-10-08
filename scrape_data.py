@@ -186,3 +186,14 @@ print(border_collie_data)
 
 second_breed_data = scrape_breed(breed_links[0])
 print(second_breed_data)
+
+breed_data = []
+
+for breed_link in breed_links:
+    data = scrape_breed(breed_link)
+
+    if data is not None:
+        breed_data.append(data)
+
+print(len(breed_data))
+print(breed_data[:5])
