@@ -1,4 +1,5 @@
 import requests
+import sqlite3
 from bs4 import BeautifulSoup
 
 def calculate_midpoint(text, unit):
@@ -197,3 +198,31 @@ for breed_link in breed_links:
 
 print(len(breed_data))
 print(breed_data[:5])
+
+
+# creating a connection to the SQLite database
+connection = sqlite3.connect("dog_breeds.db")
+cursor = connection.cursor()
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS dog_breeds (
+    breed_name TEXT PRIMARY KEY,
+    weight_midpoint_lbs REAL,
+    life_midpoint_years REAL
+    )
+""")   
+
+cursor.executemany("""
+    INSERT OR REPLACE INTO dog_breeds 
+    (breed_name, weight_midpoint_lbs, life_midpoint_years)
+    VALUES (?, ?, ?)
+""", breed_data)
+
+# save the data to the database and close the connection
+connection.commit()
+
+cursor.execute("SELECT COUNT(*) FROM dog_breeds")
+row_count = cursor.fetchone()[0]
+
+print("Rows in database:", row_count)
+
+connection.close()
