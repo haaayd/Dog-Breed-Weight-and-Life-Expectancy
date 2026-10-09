@@ -65,7 +65,7 @@ I used AI to help me understand how BeautifulSoup parses HTML and how to locate 
 
 I ran into an issue when I tried to manually create a URL for a specific dog breed and received an error because the page did not exist at the URL I expected. With AI assistance, I changed my approach and collected the individual breed URLs directly from the breed directory instead of trying to guess the URLs. I assumed they would have the breed german sheperd ( but out of the 117, german sheperd was not there)
 
-Another challenge was determining how to analyze data that was provided as ranges. AI helped me work through the idea of calculating the midpoint of each range so that I could store numerical values in my database and compare weight with life expectancy. ( i found this very helpful)
+Another challenge was determining how to analyze data that was provided as ranges. AI helped me work through the idea of calculating the midpoint of each range so that I could store numerical values in my database and compare weight with life expectancy. ( I found this very helpful)
 
 Lastly, AI helped me understand and debug my SQLite database and Git/GitHub workflow. 
 
