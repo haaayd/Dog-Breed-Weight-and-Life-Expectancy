@@ -5,6 +5,9 @@ import numpy as np
 
 # Foundational question:
 # Is average dog breed weight associated with average life expectancy?
+print("Foundational Question:")
+print("Is dog breed weight associated with life expectancy?")
+print()
 
 connection = sqlite3.connect("dog_breeds.db")
 cursor = connection.cursor()
